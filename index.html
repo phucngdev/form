@@ -4,8 +4,219 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Infomation</title>
-    <link rel="stylesheet" href="./main.css">
+    <!-- <link rel="stylesheet" href="./main.css"> -->
 </head>
+<style>
+    body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    /* ẩn điều hướng khi hover - focus vào input */
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    .title_form {
+        display: flex;
+        margin: 30px auto 0;
+        width: 244px;
+        height: 50px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    .form_info {
+        margin: 30px auto 0;
+        position: relative;
+        width: 1200px;
+        height: 600px;
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    .title_form_item {
+        width: 100%;
+        height: 20px;
+        display: flex;
+        padding-top: 10px;
+        justify-content: space-around;
+        font-size: 1.3rem;
+        font-family: sans-serif;
+        font-weight: 600;
+        color: #cdd1d5;
+    }
+    .icon_form_item {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0 auto;
+        width: 72%;
+        margin-top: 23px;
+    }
+    .circle_border {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 1px solid #cdd1d5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .circle {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #cdd1d5;
+    }
+    .light {
+        width: 290px;
+        height: 1px;
+        background-color: #cdd1d5;
+    }
+    /* ---------------------------------------------------- */
+    .form_gerenal {
+        position: absolute;
+        width: 300px;
+        height: 450px;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        left: 5%;
+        top: 17%;
+    }
+    .form_gerenal > input {
+        margin-bottom: 50px;
+        height: 30px;
+    }
+    .gender {
+        display: flex;
+    }
+    .gender_item {
+        margin-right: 30px;
+    }
+    /* ------------------------------------------ */
+    .form_contact {
+        position: absolute;
+        width: 300px;
+        height: 450px;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        right: 5%;
+        top: 17%;
+    }
+    .form_contact > input {
+        margin-bottom: 50px;
+        height: 30px;
+    }
+    .adress {
+        display: flex;
+        flex-direction: column;
+    }
+    .adress > input {
+        margin-bottom: 20px;
+        height: 30px;
+    }
+    .btn {
+        width: 150px;
+        height: 37px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        background-color: #1463F4;
+        border-radius: 10px;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+    }
+    /* ---------------------------------------------------- */
+    .form_local {
+        display: flex;
+        flex-direction: column;
+        margin: 50px auto 0;
+        padding: 10px 50px 0;
+        width: 400px;
+        height: 450px;
+        border-radius: 5px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    }
+    .form_local > h2,
+    .form_gerenal > h2,
+    .form_contact > h2 {
+        font-family: sans-serif;
+        margin: 10px 0;
+        font-size: 1rem;
+    }
+    .form_local > input,
+    .form_gerenal > input,
+    .form_contact > input,
+    .adress > input {
+        border-top-style: hidden;
+        border-right-style: hidden;
+        border-left-style: hidden;
+        border-bottom-style: groove;
+    }
+    .form_local > input {
+        margin-bottom: 10px;
+        height: 30px;
+    }
+    input:focus {
+        outline: none;
+    }
+    .majors {
+        display: flex;
+        flex-direction: column;
+    }
+    .majors_item,
+    .gender_item {
+        display: flex;
+        align-items: center;
+        font-family: sans-serif;
+    }
+    .majors_item {
+        margin: 2px 0;
+    }
+    .majors_item > input,
+    .gender_item > input {
+        margin-right: 10px;
+    }
+    .custom-checkbox {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 16px;
+        height: 16px;
+        border: 1px solid #999;
+        border-radius: 50%;
+        outline: none;
+        vertical-align: middle;
+        position: relative;
+    }
+    
+    .custom-checkbox::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 10px;
+        height: 10px;
+        background-color: #1463F4;
+        border-radius: 50%;
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+    }
+    .custom-checkbox:checked::before {
+        opacity: 1;
+    }
+</style>
 <body>
     <div class="title_form">
         <h1>Form Infomation</h1>
